@@ -1,0 +1,1 @@
+This is a site where you can login and see pokemon cards and its abilities.
