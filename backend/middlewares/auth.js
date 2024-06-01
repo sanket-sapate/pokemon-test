@@ -1,8 +1,6 @@
 import jsonwebtoken from 'jsonwebtoken';
-import User from "../database/User.js";
-import config from '../config/config.js';
-const {JWT_SECRET_KEY} = config
-const { verify, decode } = jsonwebtoken
+import {JWT_SECRET_KEY} from '../config/config.js';  
+const { verify } = jsonwebtoken
 async function auth(req, res, next) {
     
     const authorization = req.headers.authorization;

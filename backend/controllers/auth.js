@@ -1,6 +1,6 @@
 import  User  from "../database/User.js";
 import jsonwebtoken from 'jsonwebtoken';
-import config from "../config/config.js";
+import {JWT_SECRET_KEY} from "../config/config.js";
 import bcryptjs from 'bcryptjs';
 
 const {compareSync} = bcryptjs
@@ -11,7 +11,7 @@ function generateToken(user) {
     return sign({
         _id, name, email,
         exp: Math.floor(Date.now() / 1000) + (expireMinutes * 60),
-    }, config.JWT_SECRET_KEY);
+    }, JWT_SECRET_KEY);
 
 }
 
